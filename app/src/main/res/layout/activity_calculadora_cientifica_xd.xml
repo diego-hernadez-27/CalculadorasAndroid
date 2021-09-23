@@ -1,0 +1,657 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#063341"
+    tools:context=".CalculadoraCientificaXD">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:backgroundTint="#063341"
+            android:onClick="atras"
+            android:text="@string/BotonNormal"
+            android:textColor="#EF476F"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/cuadrado"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:backgroundTint="#063341"
+            android:gravity="center|center_horizontal|center_vertical"
+            android:onClick="EscribirCuadrado"
+            android:text="X²"
+            android:textColor="#EF476F"
+            app:autoSizePresetSizes="@array/autosize_corto"
+            app:autoSizeTextType="none"
+            app:layout_constraintBottom_toTopOf="@+id/guideline4"
+            app:layout_constraintEnd_toStartOf="@+id/guideline16"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline3" />
+
+        <Button
+            android:id="@+id/seno"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:backgroundTint="#063341"
+            android:gravity="center|center_horizontal|center_vertical"
+            android:onClick="Seno"
+            android:text="SEN"
+            android:textAlignment="gravity"
+            android:textAllCaps="true"
+            android:textColor="#EF476F"
+            app:autoSizePresetSizes="@array/autosize_largo"
+            app:autoSizeTextType="none"
+            app:layout_constraintBottom_toTopOf="@+id/guideline4"
+            app:layout_constraintEnd_toStartOf="@+id/guideline18"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/guideline17"
+            app:layout_constraintTop_toTopOf="@+id/guideline3"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <Button
+            android:id="@+id/coseno"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:backgroundTint="#063341"
+            android:foregroundGravity="center"
+            android:freezesText="false"
+            android:gravity="center|center_horizontal|center_vertical"
+            android:onClick="Coseno"
+            android:text="COS"
+            android:textAlignment="center"
+            android:textColor="#EF476F"
+            app:autoSizePresetSizes="@array/autosize_largo"
+            app:autoSizeTextType="none"
+            app:layout_constraintBottom_toTopOf="@+id/guideline4"
+            app:layout_constraintEnd_toStartOf="@+id/guideline19"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/guideline18"
+            app:layout_constraintTop_toTopOf="@+id/guideline3"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <Button
+            android:id="@+id/tangente"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:backgroundTint="#063341"
+            android:gravity="center|center_horizontal|center_vertical"
+            android:onClick="Tangente"
+            android:text="TAN"
+            android:textColor="#EF476F"
+            app:autoSizePresetSizes="@array/autosize_largo"
+            app:autoSizeTextType="none"
+            app:layout_constraintBottom_toTopOf="@+id/guideline4"
+            app:layout_constraintEnd_toStartOf="@+id/guideline20"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/guideline19"
+            app:layout_constraintTop_toTopOf="@+id/guideline3"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <Button
+            android:id="@+id/parizq"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:backgroundTint="#063341"
+            android:gravity="center|center_horizontal|center_vertical"
+            android:onClick="EscribirParentesisIz"
+            android:text="("
+            android:textAllCaps="false"
+            android:textColor="#EF476F"
+            app:autoSizePresetSizes="@array/autosize_corto"
+            app:autoSizeTextType="none"
+            app:layout_constraintBottom_toTopOf="@+id/guideline4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/guideline20"
+            app:layout_constraintTop_toTopOf="@+id/guideline3"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <Button
+            android:id="@+id/borrar"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:backgroundTint="#063341"
+            android:gravity="center|center_horizontal|center_vertical"
+            android:onClick="Borrar"
+            android:text="←"
+            android:textColor="#EF476F"
+            app:autoSizePresetSizes="@array/autosize_corto"
+            app:autoSizeTextType="none"
+            app:layout_constraintBottom_toTopOf="@+id/guideline7"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline20"
+            app:layout_constraintTop_toTopOf="@+id/guideline6" />
+
+        <Button
+            android:id="@+id/igual"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:backgroundTint="#EF476F"
+            android:gravity="center|center_horizontal|center_vertical"
+            android:onClick="IgualA"
+            android:text="="
+            android:textColor="#063341"
+            app:autoSizePresetSizes="@array/autosize_corto"
+            app:autoSizeTextType="none"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/guideline20"
+            app:layout_constraintTop_toTopOf="@+id/guideline7"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <Button
+            android:id="@+id/limpiar"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:backgroundTint="#063341"
+            android:gravity="center|center_horizontal|center_vertical"
+            android:onClick="ClearAll"
+            android:text="AC"
+            android:textColor="#EF476F"
+            app:autoSizePresetSizes="@array/autosize_corto"
+            app:autoSizeTextType="none"
+            app:layout_constraintBottom_toTopOf="@+id/guideline6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline20"
+            app:layout_constraintTop_toTopOf="@+id/guideline5" />
+
+        <Button
+            android:id="@+id/seis"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:backgroundTint="#063341"
+            android:gravity="center|center_horizontal|center_vertical"
+            android:onClick="EscribirSeis"
+            android:text="6"
+            android:textColor="#EF476F"
+            app:autoSizePresetSizes="@array/autosize_corto"
+            app:autoSizeTextType="none"
+            app:layout_constraintBottom_toTopOf="@+id/guideline6"
+            app:layout_constraintEnd_toStartOf="@+id/guideline19"
+            app:layout_constraintStart_toStartOf="@+id/guideline18"
+            app:layout_constraintTop_toTopOf="@+id/guideline5" />
+
+        <Button
+            android:id="@+id/tres"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:backgroundTint="#063341"
+            android:gravity="center|center_horizontal|center_vertical"
+            android:onClick="EscribirTres"
+            android:text="3"
+            android:textColor="#EF476F"
+            app:autoSizePresetSizes="@array/autosize_corto"
+            app:autoSizeTextType="none"
+            app:layout_constraintBottom_toTopOf="@+id/guideline5"
+            app:layout_constraintEnd_toStartOf="@+id/guideline19"
+            app:layout_constraintStart_toStartOf="@+id/guideline18"
+            app:layout_constraintTop_toTopOf="@+id/guideline4" />
+
+        <Button
+            android:id="@+id/nueve"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:backgroundTint="#063341"
+            android:gravity="center|center_horizontal|center_vertical"
+            android:onClick="EscribirNueve"
+            android:text="9"
+            android:textColor="#EF476F"
+            app:autoSizePresetSizes="@array/autosize_corto"
+            app:autoSizeTextType="none"
+            app:layout_constraintBottom_toTopOf="@+id/guideline7"
+            app:layout_constraintEnd_toStartOf="@+id/guideline19"
+            app:layout_constraintStart_toStartOf="@+id/guideline18"
+            app:layout_constraintTop_toTopOf="@+id/guideline6" />
+
+        <Button
+            android:id="@+id/punto"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:backgroundTint="#063341"
+            android:gravity="center|center_horizontal|center_vertical"
+            android:onClick="EscribirPunto"
+            android:text="."
+            android:textColor="#EF476F"
+            app:autoSizePresetSizes="@array/autosize_corto"
+            app:autoSizeTextType="none"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guideline19"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/guideline18"
+            app:layout_constraintTop_toTopOf="@+id/guideline7"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <Button
+            android:id="@+id/division"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:backgroundTint="#063341"
+            android:gravity="center|center_horizontal|center_vertical"
+            android:onClick="OperacionDividir"
+            android:text="÷"
+            android:textColor="#EF476F"
+            app:autoSizePresetSizes="@array/autosize_corto"
+            app:autoSizeTextType="none"
+            app:layout_constraintBottom_toTopOf="@+id/guideline5"
+            app:layout_constraintEnd_toStartOf="@+id/guideline20"
+            app:layout_constraintStart_toStartOf="@+id/guideline19"
+            app:layout_constraintTop_toTopOf="@+id/guideline4" />
+
+        <Button
+            android:id="@+id/suma"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:backgroundTint="#063341"
+            android:gravity="center|center_horizontal|center_vertical"
+            android:onClick="OperacionSumar"
+            android:text="+"
+            android:textColor="#EF476F"
+            app:autoSizePresetSizes="@array/autosize_corto"
+            app:autoSizeTextType="none"
+            app:layout_constraintBottom_toTopOf="@+id/guideline7"
+            app:layout_constraintEnd_toStartOf="@+id/guideline20"
+            app:layout_constraintStart_toStartOf="@+id/guideline19"
+            app:layout_constraintTop_toTopOf="@+id/guideline6" />
+
+        <Button
+            android:id="@+id/resta"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:backgroundTint="#063341"
+            android:gravity="center|center_horizontal|center_vertical"
+            android:onClick="OperacionRestar"
+            android:text="-"
+            android:textColor="#EF476F"
+            app:autoSizePresetSizes="@array/autosize_corto"
+            app:autoSizeTextType="none"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guideline20"
+            app:layout_constraintStart_toStartOf="@+id/guideline19"
+            app:layout_constraintTop_toTopOf="@+id/guideline7" />
+
+        <Button
+            android:id="@+id/multiplicacion"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:backgroundTint="#063341"
+            android:gravity="center|center_horizontal|center_vertical"
+            android:onClick="OperacionMultiplicar"
+            android:text="×"
+            android:textColor="#EF476F"
+            app:autoSizePresetSizes="@array/autosize_corto"
+            app:autoSizeTextType="none"
+            app:layout_constraintBottom_toTopOf="@+id/guideline6"
+            app:layout_constraintEnd_toStartOf="@+id/guideline20"
+            app:layout_constraintStart_toStartOf="@+id/guideline19"
+            app:layout_constraintTop_toTopOf="@+id/guideline5" />
+
+        <Button
+            android:id="@+id/parder"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:backgroundTint="#063341"
+            android:gravity="center|center_horizontal|center_vertical"
+            android:onClick="EscribirParentesisDe"
+            android:text=")"
+            android:textColor="#EF476F"
+            app:autoSizePresetSizes="@array/autosize_corto"
+            app:autoSizeTextType="none"
+            app:layout_constraintBottom_toTopOf="@+id/guideline5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline20"
+            app:layout_constraintTop_toTopOf="@+id/guideline4" />
+
+        <Button
+            android:id="@+id/dos"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:backgroundTint="#063341"
+            android:gravity="center|center_horizontal|center_vertical"
+            android:onClick="EscribirDos"
+            android:text="2"
+            android:textColor="#EF476F"
+            app:autoSizePresetSizes="@array/autosize_corto"
+            app:autoSizeTextType="none"
+            app:layout_constraintBottom_toTopOf="@+id/guideline5"
+            app:layout_constraintEnd_toStartOf="@+id/guideline18"
+            app:layout_constraintStart_toStartOf="@+id/guideline17"
+            app:layout_constraintTop_toTopOf="@+id/guideline4" />
+
+        <Button
+            android:id="@+id/ocho"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:backgroundTint="#063341"
+            android:gravity="center|center_horizontal|center_vertical"
+            android:onClick="EscribirOcho"
+            android:text="8"
+            android:textColor="#EF476F"
+            app:autoSizePresetSizes="@array/autosize_corto"
+            app:autoSizeTextType="none"
+            app:layout_constraintBottom_toTopOf="@+id/guideline7"
+            app:layout_constraintEnd_toStartOf="@+id/guideline18"
+            app:layout_constraintStart_toStartOf="@+id/guideline17"
+            app:layout_constraintTop_toTopOf="@+id/guideline6" />
+
+        <Button
+            android:id="@+id/cero"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:backgroundTint="#063341"
+            android:gravity="center|center_horizontal|center_vertical"
+            android:onClick="EscribirCero"
+            android:text="0"
+            android:textColor="#EF476F"
+            app:autoSizePresetSizes="@array/autosize_corto"
+            app:autoSizeTextType="none"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guideline18"
+            app:layout_constraintStart_toStartOf="@+id/guideline17"
+            app:layout_constraintTop_toTopOf="@+id/guideline7" />
+
+        <Button
+            android:id="@+id/cinco"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:backgroundTint="#063341"
+            android:gravity="center|center_horizontal|center_vertical"
+            android:onClick="EscribirCinco"
+            android:text="5"
+            android:textColor="#EF476F"
+            app:autoSizePresetSizes="@array/autosize_corto"
+            app:autoSizeTextType="none"
+            app:layout_constraintBottom_toTopOf="@+id/guideline6"
+            app:layout_constraintEnd_toStartOf="@+id/guideline18"
+            app:layout_constraintStart_toStartOf="@+id/guideline17"
+            app:layout_constraintTop_toTopOf="@+id/guideline5" />
+
+        <Button
+            android:id="@+id/raiz"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:backgroundTint="#063341"
+            android:gravity="center|center_horizontal|center_vertical"
+            android:onClick="OperacionRaiz"
+            android:text="y√x"
+            android:textColor="#EF476F"
+            app:autoSizePresetSizes="@array/autosize_largo"
+            app:autoSizeTextType="none"
+            app:layout_constraintBottom_toTopOf="@+id/guideline6"
+            app:layout_constraintEnd_toStartOf="@+id/guideline16"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline5" />
+
+        <Button
+            android:id="@+id/elevado"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:backgroundTint="#063341"
+            android:gravity="center|center_horizontal|center_vertical"
+            android:onClick="OperacionElevar"
+            android:text="^"
+            android:textColor="#EF476F"
+            app:autoSizePresetSizes="@array/autosize_corto"
+            app:autoSizeTextType="none"
+            app:layout_constraintBottom_toTopOf="@+id/guideline5"
+            app:layout_constraintEnd_toStartOf="@+id/guideline16"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline4" />
+
+        <Button
+            android:id="@+id/logaritmo"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:backgroundTint="#063341"
+            android:gravity="center|center_horizontal|center_vertical"
+            android:onClick="Logarito10"
+            android:text="LOG"
+            android:textColor="#EF476F"
+            app:autoSizePresetSizes="@array/autosize_largo"
+            app:autoSizeTextType="none"
+            app:layout_constraintBottom_toTopOf="@+id/guideline7"
+            app:layout_constraintEnd_toStartOf="@+id/guideline16"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline6" />
+
+        <Button
+            android:id="@+id/naturak"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:backgroundTint="#063341"
+            android:gravity="center|center_horizontal|center_vertical"
+            android:onClick="LogaritoN"
+            android:text="LN"
+            android:textColor="#EF476F"
+            app:autoSizePresetSizes="@array/autosize_corto"
+            app:autoSizeTextType="none"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guideline16"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline7" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_end="365dp"
+            app:layout_constraintGuide_percent=".50" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="438dp"
+            app:layout_constraintGuide_percent="0.60" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="20dp"
+            app:layout_constraintGuide_percent=".7" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="20dp"
+            app:layout_constraintGuide_percent=".8" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="20dp"
+            app:layout_constraintGuide_percent=".9" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="30dp"
+            app:layout_constraintGuide_percent="0.166666666667" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline17"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="20dp"
+            app:layout_constraintGuide_percent="0.333333333334" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="151dp"
+            app:layout_constraintGuide_percent="0.50" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline19"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="20dp"
+            app:layout_constraintGuide_percent="0.666666666668" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="301dp"
+            app:layout_constraintGuide_percent="0.833333333335" />
+
+        <Button
+            android:id="@+id/reciproco"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:backgroundTint="#063341"
+            android:gravity="center|center_horizontal|center_vertical"
+            android:onClick="Reciproco"
+            android:text="1/X"
+            android:textColor="#EF476F"
+            app:autoSizePresetSizes="@array/autosize_largo"
+            app:autoSizeTextType="none"
+            app:layout_constraintBottom_toTopOf="@+id/guideline4"
+            app:layout_constraintEnd_toStartOf="@+id/guideline17"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/guideline16"
+            app:layout_constraintTop_toTopOf="@+id/guideline3"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <Button
+            android:id="@+id/uno"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:backgroundTint="#063341"
+            android:gravity="center|center_horizontal|center_vertical"
+            android:onClick="EscribirUno"
+            android:text="1"
+            android:textColor="#EF476F"
+            app:autoSizePresetSizes="@array/autosize_corto"
+            app:autoSizeTextType="none"
+            app:layout_constraintBottom_toTopOf="@+id/guideline5"
+            app:layout_constraintEnd_toStartOf="@+id/guideline17"
+            app:layout_constraintStart_toStartOf="@+id/guideline16"
+            app:layout_constraintTop_toTopOf="@+id/guideline4" />
+
+        <Button
+            android:id="@+id/siete"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:backgroundTint="#063341"
+            android:gravity="center|center_horizontal|center_vertical"
+            android:onClick="EscribirSiete"
+            android:text="7"
+            android:textColor="#EF476F"
+            app:autoSizePresetSizes="@array/autosize_corto"
+            app:autoSizeTextType="none"
+            app:layout_constraintBottom_toTopOf="@+id/guideline7"
+            app:layout_constraintEnd_toStartOf="@+id/guideline17"
+            app:layout_constraintStart_toStartOf="@+id/guideline16"
+            app:layout_constraintTop_toTopOf="@+id/guideline6" />
+
+        <Button
+            android:id="@+id/modulo"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:backgroundTint="#063341"
+            android:gravity="center|center_horizontal|center_vertical"
+            android:onClick="OperacionModulo"
+            android:text="%"
+            android:textColor="#EF476F"
+            app:autoSizePresetSizes="@array/autosize_corto"
+            app:autoSizeTextType="none"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guideline17"
+            app:layout_constraintStart_toStartOf="@+id/guideline16"
+            app:layout_constraintTop_toTopOf="@+id/guideline7" />
+
+        <Button
+            android:id="@+id/cuatro"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:backgroundTint="#063341"
+            android:gravity="center|center_horizontal|center_vertical"
+            android:onClick="EscribirCuatro"
+            android:text="4"
+            android:textColor="#EF476F"
+            app:autoSizePresetSizes="@array/autosize_corto"
+            app:autoSizeTextType="none"
+            app:layout_constraintBottom_toTopOf="@+id/guideline6"
+            app:layout_constraintEnd_toStartOf="@+id/cinco"
+            app:layout_constraintStart_toStartOf="@+id/guideline16"
+            app:layout_constraintTop_toTopOf="@+id/guideline5" />
+
+        <TextView
+            android:id="@+id/vistapri"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="#073b4c"
+            android:gravity="bottom"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp"
+            android:textAlignment="textEnd"
+            android:textColor="#EF476F"
+            android:textSize="48sp"
+            app:layout_constraintBottom_toTopOf="@+id/guideline3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline21"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline21"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="65dp"
+            app:layout_constraintGuide_percent=".25" />
+
+        <TextView
+            android:id="@+id/vistasecundaria"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="#073b4c"
+            android:gravity="bottom"
+            android:paddingRight="5dp"
+            android:paddingBottom="5dp"
+            android:scrollbars="vertical"
+            android:textAlignment="textEnd"
+            android:textColor="#EF476F"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@+id/vistapri"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />;
+        app:layout_constraintBottom_toTopOf="@+id/vistapri"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</RelativeLayout>
